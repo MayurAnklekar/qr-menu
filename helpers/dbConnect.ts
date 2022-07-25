@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
+import Test from 'models/TestModel'
 
-async function dbConnect(){
+const dbConnect = async () => {
 
-    if (mongoose.connection.readyState === 1) return
 
     return await mongoose.connect(process.env.MONGO_URL)
     .then(() => {
