@@ -1,15 +1,23 @@
 import type { NextPage } from 'next'
 import { Button } from '@mantine/core';
 import { TextInput } from '@mantine/core';
-import addCategory from './api/test/add';
+import {addCategory} from 'helpers/APIs/category';
 
 
 const Home: NextPage = () => {
-  // const handleSubmit = async () => {
-  //   const res = await addCategory({
-  //     category: 'test'
-  //   });
-  // }
+
+  const handleSubmit = async () => {
+
+    try{
+      const result = await addCategory({ 
+        name: 'test',
+      })
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <TextInput

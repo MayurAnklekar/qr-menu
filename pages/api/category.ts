@@ -1,7 +1,6 @@
-import dbConnect from '../../../helpers/dbConnect';
 import type { NextApiRequest, NextApiResponse } from 'next'
-import Test from '../../../models/TestModel'
-
+import dbConnect from 'helpers/dbConnect'
+import Test from 'models/TestModel'
 
 dbConnect()
 

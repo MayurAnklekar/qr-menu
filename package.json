@@ -20,6 +20,7 @@
     "@mantine/prism": "^4.2.12",
     "@mantine/rte": "^4.2.12",
     "@mantine/spotlight": "^4.2.12",
+    "axios": "^0.27.2",
     "dayjs": "^1.11.4",
     "mongoose": "^6.4.5",
     "next": "12.2.2",
