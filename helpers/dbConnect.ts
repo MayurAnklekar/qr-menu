@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import Test from 'models/TestModel'
 
 const dbConnect = async () => {
 

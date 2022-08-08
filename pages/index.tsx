@@ -19,15 +19,10 @@ const Home: NextPage = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextInput
-        placeholder="Category"
-        required
-      />
-      <Button type="submit" variant="gradient" gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }}>
-        Add Category
-      </Button>
-    </form>
+   
+    <h1 className="text-3xl font-bold bg-red-500">
+      Hello world!
+    </h1>
 
   );
 }
