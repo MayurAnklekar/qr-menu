@@ -11,6 +11,8 @@ type Data = {
 async function addCategory(req: NextApiRequest, res: NextApiResponse) {
     const { method } = req
 
+
+
     switch(method)
     {
         case 'POST':
@@ -19,7 +21,8 @@ async function addCategory(req: NextApiRequest, res: NextApiResponse) {
             await test.save()
             return res.status(200).json({ message: 'Category added' })
         case 'GET':
-            const categories = await Category.find();
+            const categories = await Category.find({});
+            console.log(categories)
             return res.status(200).json({data: categories});
         default:
             return res.status(404).send('Method type not found.')

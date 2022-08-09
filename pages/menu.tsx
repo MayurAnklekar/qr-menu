@@ -3,9 +3,6 @@ import { Button } from '@mantine/core';
 import { TextInput } from '@mantine/core';
 import { addCategory, getCategories } from 'helpers/APIs/category';
 import {useForm} from 'react-hook-form';
-import axios from 'axios';
-import dbConnect from 'helpers/dbConnect'
-import { getEnabledCategories } from 'trace_events';
 
 
 const Home: NextPage = (props) => {
@@ -39,9 +36,11 @@ const Home: NextPage = (props) => {
                 Add Category
             </Button>
         </form>
-            {/* {
-                props.data.map((category) => {})
-            } */}
+            {
+                props.category.map((category) =>{
+                    return <div key={category._id}>{category.name}</div>
+                })
+            }
             </div>
             <div className="basis-1/2">Food Items</div>
         </div>
@@ -51,12 +50,12 @@ const Home: NextPage = (props) => {
 }
 
 export const getServerSideProps = async () => {
-    await dbConnect()
+    
     const {data} = await getCategories()
     console.log(data)
     return {
         props: {
-            categories: data.data
+            category: data
         }
     }
 }

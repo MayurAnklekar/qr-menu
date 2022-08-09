@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 
 const api = axios.create({
-    baseURL: '/api',
+    baseURL: 'http://localhost:3000/api',
     withCredentials: true
 })
 
